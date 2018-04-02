@@ -4,7 +4,7 @@
 }
 .header {
     border: 1px solid red;
-    padding: 15px;
+    padding: 2px;
 }
 .row::after {
     content: "";
@@ -13,7 +13,7 @@
 }
 [class*="col-"] {
     float: left;
-    padding: 15px;
+    padding: 1px;
     border: 1px solid red;
 }
 .col-1 {width: 8.33%;}

@@ -4,7 +4,6 @@ from datetime import date
 
 from mmCode import PersonRecClass
 
-
 class TestPersonRec(unittest.TestCase):
     def test_defaults(person):
         person = PersonRecClass.PersonRec()
@@ -12,6 +11,7 @@ class TestPersonRec(unittest.TestCase):
         assert (person.middleName == "")
         assert (person.lastName == "")
         assert (person.suffix == "")
+        assert (person.nickname == "")
         assert (person.gender == 'M' or person.gender == 'F')
         assert (person.day_of_birth_known == '0')
         assert (person.month_of_birth_known == '0')
@@ -25,6 +25,7 @@ class TestPersonRec(unittest.TestCase):
         assert (person.streetOfCemetery == "")
         assert (person.cityOfCemetery == "")
         assert (person.stateOfCemetery == "")
+        assert (person.zipOfCemetery == "")
         assert (person.graveLocation == "")
         assert (person.graveGPSlat == 0.0)
         assert (person.graveGPSlon == 0.0)
@@ -32,9 +33,10 @@ class TestPersonRec(unittest.TestCase):
         assert (person.picGstone == "")
         assert (person.picFav == "")
         assert (person.picOther == "")
+        assert (person.description == "")
         assert (person.notes == "")
         assert (person.bio == "")
-        assert (person.description == "")
+
 
     def test_strToDate(self):
         person = PersonRecClass.PersonRec()
