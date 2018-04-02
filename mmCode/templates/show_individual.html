@@ -1,0 +1,19 @@
+{% extends "base.html "%}
+{% block content %}
+<div class="row">
+{% for item in range(2) %}
+  <div class="col-12">
+   <div style="float:left;"
+    {{mlist[item][0]}}<br>
+  <div class="col-8">
+   <img src='..\static\images\{{mlist[item][1]}}' alt='img'>
+   </div>
+  </div>
+  <div class="col-9">
+    <p>{{mlist[item][2]}}</p>
+</div>
+{{mlist[item][0]}}<br>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

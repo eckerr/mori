@@ -35,6 +35,7 @@ class PersonRec:
         self.middleName = ""
         self.lastName = ""
         self.suffix = ""
+        self.nickname = ""
         self.gender = "M"
         self.day_of_birth_known = '0'
         self.month_of_birth_known = '0'
@@ -56,9 +57,10 @@ class PersonRec:
         self.picGstone = ""
         self.picFav = ""
         self.picOther = ""
+        self.description = ""
         self.notes = ""
         self.bio = ""
-        self.description = ""
+
 
     def getStats(self):
         """method to calculate info stats

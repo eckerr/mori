@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang "en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | Mememto Mori</title>
+    <link rel="stylesheet" href="static\css\main.css">
+    {% block extra_styles %}{% endblock %}
+    {% block extra_scripts %}{% endblock %}
+  </head>
+<body>
+  <div class="header">
+      <h3>Memento Mori</h3>
+  </div>
+  <div>
+    <h1>{% block content_title %}{% endblock %}</h1>
+          {% block content %}
+          {% endblock %}
+  </div>
+  <div class="row">
+      <hr />
+      <footer>
+          <p>&copy; Ed Kerr</p>
+      </footer>
+  </div>
+</body>
+</html>
