@@ -6,6 +6,8 @@ class Configuration(object):
     STATIC_DIR = os.path.join(APPLICATION_DIR, 'static')
     IMAGES_DIR = os.path.join(STATIC_DIR, 'images')
 
+    SECRET_KEY = 'Mori is something special' # Unique key for this app
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     DEBUG = True
