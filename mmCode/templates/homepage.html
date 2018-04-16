@@ -1,17 +1,5 @@
-{% block content_tile %}Welcome to Memento Mori{% endblock %}
+{% extends "base.html" %}
 
-{% block content %}
-    {% if number %}
-        <p>Your number is {{ number|int }}</p>
-        <ul>
-            {% for i in range(number|int) %}
-               {% if i is divisibleby 2 %}
-                 <li>{{ i }}</>
-               {% endif %}
-             {% endfor %}
-        </ul>
-    {% else %}
-        <p>No number specified</p>
-    {% endif %}
-    <p>Your name is {{ name|default('<unknown>', True)}}.</p>
-{% endblock %}
+{% block content_title %}Welcome to Memento Mori{% endblock %}
+
+{% block content %}{% endblock %}

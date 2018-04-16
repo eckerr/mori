@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{
+    person.first_name }} {{
+        person.middle_name }} {{
+            person.last_name }}{% endblock %}
+
+{% block content_title %}{{
+    person.first_name }} {{
+        person.middle_name }} {{
+            person.last_name }}{% endblock %}
+
+{% block content %}
+  <form action ="{{ url_for('persons.delete', id=person.id) }}"
+    method="post">
+      <fieldset>
+          <legend>Delete this entry?<legend>
+            <button class="btn btn-danger" type="submit">Delete</button>
+            <a class="btn" href="{{ url_for(
+                'persons.detail', id=person.id) }}">Cancel</a>
+     <fieldset>
+  </form>
+{% endblock %}

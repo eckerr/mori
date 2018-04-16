@@ -12,6 +12,7 @@ class PersonEntry(db.Model):
     middle_name = db.Column(db.String(60))
     last_name = db.Column(db.String(60))
     suffix = db.Column(db.String(10))
+    nickname = db.Column(db.String(20))
     gender = db.Column(db.SmallInteger, default=GENDER_MALE)
     status = db.Column(db.SmallInteger, default=STATUS_DECEASED)
     day_of_birth_known = db.Column(db.String(1))
@@ -23,12 +24,19 @@ class PersonEntry(db.Model):
     date_of_birth = db.Column(db.String(6))
     date_of_death = db.Column(db.String(6))
     # Cemetery
-    cemetery_id = db.relationship('CemeteryEntry',
-        backref='person_entry', lazy=True, uselist=False)
+    #cemetery_id = db.relationship('CemeteryEntry',
+    #    backref='person_entry', lazy=True, uselist=False)
+    cemetery_id = db.Column(db.Integer, db.ForeignKey('cemetery_entry.id'))
     # grave location
     grave_location = db.Column(db.Text)
-    grave_GPS_lat = db.Column(db.Float)
-    grave_GPS_lon = db.Column(db.Float)
+    grave_GPS_lat = db.Column(db.String(15))
+    grave_GPS_lon = db.Column(db.String(15))
+
+    # relatives
+    parents = db.Column(db.Text)
+    siblings = db.Column(db.Text)
+    children = db.Column(db.Text)
+
     # pictures
     pic_thumb = db.Column(db.String(60))
     pic_gstone = db.Column(db.String(60))
@@ -42,12 +50,13 @@ class CemeteryEntry(db.Model):
     # cemetery
     id = db.Column(db.Integer, primary_key=True)
     name_of_cemetery = db.Column(db.String(100))
+    phone_of_cemetery = db.Column(db.String(20))
     street_of_cemetery = db.Column(db.String(100))
     city_of_cemetery = db.Column(db.String(100))
     state_of_cemetery = db.Column(db.String(2))
     zip_of_cemetery = db.Column(db.String(10))
-    person_id = db.Column(db.Integer, db.ForeignKey('person_entry.id'),
-                                           nullable=True)
+    #person_id = db.Column(db.Integer, db.ForeignKey('person_entry.id'),
+    #                                       nullable=True)
 
     def __repr__ (self):
         return "<CemeteryEntry:(cemetery= '%s',\

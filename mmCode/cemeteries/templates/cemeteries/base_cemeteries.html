@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block extra_nav %}
+<li><a href="{{ url_for('cemeteries.index')}}">List Cemeteries</a></li>
+<li><a href="{{ url_for('cemeteries.create')}}">Add Cemetery</a></li>
+{% endblock %}
+
+{% block sidebar %}
+<ul class="well nav nav-stacked">
+  <li><a href="{{ url_for('cemeteries.create')}}">Add Cemetery</a></li>
+</ul>
+{% endblock %}

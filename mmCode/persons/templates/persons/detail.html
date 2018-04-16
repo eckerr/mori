@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ person.first_name }}
+                {{ person.middle_name }}
+                {{ person.last_name }}
+{% endblock %}
+
+{% block content_title %}{{ person.first_name }}
+                {{ person.middle_name }}
+                {{ person.last_name }}{% endblock %}
+
+ {% block sidebar %}
+     <ul class="well nav nav-list">
+       <a href="{{ url_for('persons.index') }}"> Back </a>
+       <a href="{{ url_for('persons.edit', id=person.id) }}"> Edit </a>
+
+     </ul>
+ {% endblock %}
+
+  {% block content %}
+    <img src='..\..\static\images\{{person.pic_thumb}}' alt='picture'><br>
+
+
+    Parents: {{ person.parents }}<br>
+    Siblings: {{ person.siblings }}<br>
+    Children: {{ person.children }}<br>
+    Grave Location {{ person.grave_location }}<br>
+
+  {% endblock %}
