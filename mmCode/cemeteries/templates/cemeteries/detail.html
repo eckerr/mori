@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ cemetery.name_of_cemetery }}{% endblock %}
+
+{% block content_title %}{{ cemetery.name_of_cemetery }}{% endblock %}
+
+ {% block sidebar %}
+     <ul class="well nav nav-list">
+       <a href="{{ url_for('cemeteries.index') }}"> Back </a>
+       <a href="{{ url_for('cemeteries.edit', id=cemetery.id) }}"> Edit </a>
+
+     </ul>
+ {% endblock %}
+
+  {% block content %}
+    {{ cemetery.phone_of_cemetery }}<br>
+    {{ cemetery.street_of_cemetery }}<br>
+    {{ cemetery.city_of_cemetery }},
+    {{ cemetery.state_of_cemetery }},
+    {{ cemetery.zip_of_cemetery }}
+  {% endblock %}

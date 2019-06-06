@@ -76,7 +76,7 @@ class PersonRec:
             years_past = (today_date - dod).days // 365
             return dob, dod, age_at_death, age_would_be, years_past
 
-    def str_to_ate(self, in_date_string):
+    def str_to_date(self, in_date_string):
         'method to convert date string to date object'
         return date(int(in_date_string[:4]), int(in_date_string[4:6]), int(in_date_string[6:8]))
 

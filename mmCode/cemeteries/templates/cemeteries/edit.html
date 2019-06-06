@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 {% from "macros/form_field.html" import form_field %}
 
-{% block title %}edit  {{ person.first_name }} {{ person.middle_name }}
-    {{ person.last_name }} {% endblock %}
+{% block title %}edit {{ cemetery.name_of_cemetery }} {% endblock %}
 
-{% block content_title %}Edit {{ person.first_name }} {{ person.middle_name }}
-    {{ person.last_name }}{% endblock %}
+{% block content_title %}Edit {{ cemetery.name_of_cemetery }}{% endblock %}
 
 {% block content %}
-  <form action="{{ url_for('persons.edit', id=person.id) }}" class="form
+  <form action="{{ url_for('cemeteries.edit', id=cemetery.id) }}" class="form
       form-horizontal" method="post">
       {% for field in form %}
         {{ form_field(field) }}
@@ -16,7 +14,7 @@
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
           <button type="submit" class="btn btn-default">Save</button>
-          <a class="btn" href="{{ url_for('persons.detail', id = person.id)
+          <a class="btn" href="{{ url_for('cemeteries.detail', id = cemetery.id)
                }}">Cancel</a>
         </div>
     </div>

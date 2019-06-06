@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "macros/form_field.html" import form_field %}
+
+{% block title %}Add cemetery{% endblock %}
+
+{% block content_title %}Add Cemetery{% endblock %}
+
+{% block content %}
+  <form action="{{ url_for('cemeteries.create') }}" class="form
+      form-horizontal" method="post">
+      {% for field in form %}
+        {{ form_field(field) }}
+      {% endfor %}
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <button type="submit" class="btn btn-default">Add</button>
+          <a class="btn" href="{{ url_for('cemeteries.index') }}">Cancel</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

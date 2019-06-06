@@ -1,0 +1,7 @@
+{% for cemetery in object_list.items %}
+<p><a href="{{ url_for('cemeteries.detail', id=cemetery.id) }}">{{
+    cemetery.name_of_cemetery}}</a>
+    , {{cemetery.city_of_cemetery}},
+    {{cemetery.state_of_cemetery}},
+    {{cemetery.zip_of_cemetery}}</p>
+{% endfor %}

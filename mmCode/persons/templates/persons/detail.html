@@ -20,10 +20,19 @@
   {% block content %}
     <img src='..\..\static\images\{{person.pic_thumb}}' alt='picture'><br>
 
+    {{ birth_death }}<br>
+    {{ time_past }}<br><br>
+
 
     Parents: {{ person.parents }}<br>
     Siblings: {{ person.siblings }}<br>
-    Children: {{ person.children }}<br>
-    Grave Location {{ person.grave_location }}<br>
+    Children: {{ person.children }}<br><br>
+    Bio:  {{ person.pic_bio }}<br>
+    Description: {{ person.description }}<br>
+    Notes: {{ person.notes }}<br><br>
+    Cemetery: {{ cemetery.name_of_cemetery }}<br>
+    {{ cemetery.street_of_cemetery }}, {{ cemetery.city_of_cemetery }},
+    {{ cemetery.state_of_cemetery }} {{ cemetery.zip_of_cemetery }}<br>
+    Grave Location: {{ person.grave_location }}<br>
 
   {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ cemetery.title }}{% endblock %}
+
+{% block content_title %}{{ cemetery.title }}{% endblock %}
+
+{% block content %}
+  <form action ="{{ url_for('cemeteries.delete', id=cemetery.id) }}"
+    method="post">
+      <fieldset>
+          <legend>Delete this entry?<legend>
+            <button class="btn btn-danger" type="submit">Delete</button>
+            <a class="btn" href="{{ url_for(
+                'cemeteries.detail', id=cemetery.id) }}">Cancel</a>
+     <fieldset>
+  </form>
+{% endblock %}

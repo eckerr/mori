@@ -1,0 +1,12 @@
+{% for person in object_list.items %}
+<p>
+     <img src='..\static\images\{{person.pic_thumb}}' alt='picture'>
+    <a href="{{ url_for('persons.detail', id=person.id) }}">{{
+    person.first_name }} {{
+        person.middle_name }} {{
+            person.last_name }}</a>
+  ({{ person.date_of_birth[4:8] }} - {{ person.date_of_death[4:8] }})
+
+
+        </p>
+{% endfor %}

@@ -1,0 +1,14 @@
+{% for i in range(0, 9) %}
+    <p>
+     <img src='..\static\images\{{object_list.items[i].PersonEntry.pic_thumb}}'
+            alt='picture'>
+    <a href="{{ url_for('persons.detail', id=object_list.items[i].PersonEntry.id) }}">
+        {{ object_list.items[i].PersonEntry.first_name }}
+        {{ object_list.items[i].PersonEntry.middle_name }}
+        {{ object_list.items[i].PersonEntry.last_name }}</a>
+    ({{ object_list.items[i].PersonEntry.date_of_birth[:4] }} -
+                 {{ object_list.items[i].PersonEntry.date_of_death[:4] }})
+    {{ object_list.items[i].CemeteryEntry.name_of_cemetery }}
+        </p>
+
+{% endfor %}
